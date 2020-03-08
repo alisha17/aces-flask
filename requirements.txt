@@ -1,5 +1,5 @@
 flask
 flask-cors
 mongoengine
-Flask-JWT-Extended==3.24.1
-Flask-RESTful==0.3.8
+flask-restful
+flask-jwt-extended
