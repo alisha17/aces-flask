@@ -14,3 +14,6 @@ DATABASE_HOST = "localhost"
 DATABASE_PORT = 27017
 
 SECRET_KEY = "okay"
+JWT_SECRET_KEY = "jwt-secret-string"
+
+CORS_HEADERS = "Content-Type"

@@ -1,18 +1,21 @@
 from flask import Flask
 from flask_cors import CORS
 import mongoengine
+from flask_jwt_extended import JWTManager
 
 
 app = Flask(__name__)
 
-app.config.from_object('config')
+app.config.from_object("config")
 
-CORS(app)
+CORS(app, support_credentials=True)
+
+jwt = JWTManager(app)
 
 mongo_connection = mongoengine.connect(
-    app.config['DATABASE_NAME'],
-    host=app.config['DATABASE_HOST'],
-    port=app.config['DATABASE_PORT']
+    app.config["DATABASE_NAME"],
+    host=app.config["DATABASE_HOST"],
+    port=app.config["DATABASE_PORT"],
 )
 
 try:
